@@ -215,7 +215,7 @@ def to_lists_label_feature_scheme(dic, df):
     return (labels, features)
 
 ###############################################################################
-## SPOT-CHECKING STANDARD ALGORITHMS -> NB, ADA and GB LOOK PROMISING
+## SPOT-CHECKING STANDARD ALGORITHMS 
 ###############################################################################
 
 def spot_check_models_default(features, labels, score, norm):
@@ -255,9 +255,10 @@ def spot_check_models_default(features, labels, score, norm):
 ###############################################################################
 ## GRID SEARCH FOR ADA 
 ###############################################################################
+
+def tune_ADA(features, labels):
     """ perform grid search for ADA 
     """
-def tune_ADA(features, labels):
     kfold = StratifiedShuffleSplit(labels, 100, random_state = 42)
     clf = AdaBoostClassifier()
     param_grid = {'learning_rate': [0.1, 0.05, 0.02],
@@ -328,7 +329,7 @@ def stack_models(features, labels):
               % (scores.mean(), scores.std(), label))
 
 ###############################################################################
-## USING PIPES TO TEST IF REDUCING DIMENSIONALITY MAKES SENSE -
+## USING PIPES TO TEST IF REDUCING DIMENSIONALITY MAKES SENSE 
 ############################################################################### 
 
 def red_dim(features, labels, red):
