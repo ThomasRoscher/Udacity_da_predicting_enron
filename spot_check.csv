@@ -1,0 +1,7 @@
+Algorithm;Pre_Process;Score
+LR;standardized;0.27
+NB;none;0.24
+ADA;none;0.23
+KNN;none;0.21
+GB;none;0.30
+CART;scaled;0.28
